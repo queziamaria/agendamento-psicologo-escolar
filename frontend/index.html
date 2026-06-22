@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsicoEdu - Agendamento com Psicólogo Escolar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>PsicoEdu</h1>
+  <p>Agendamento com Psicólogo Escolar</p>
+</header>
+
+<main>
+
+  <!-- TELA INICIAL -->
+  <section class="container" id="inicio">
+    <h2>Seja Bem-vindo(a)</h2>
+    <img src="cerebro.png" alt="cérebro">
+    <button onclick="abrirCadastroAluno()">Cadastrar Aluno</button>
+    <button onclick="abrirCadastroPsi()"> Cadastrar Psicólogo</button>
+    <button onclick="abrirTela('entrar')"> Entrar</button>
+  </section>
+
+  <!-- TELA ESCOLHER TIPO DE LOGIN -->
+  <section class="container hidden" id="entrar">
+    <h2>Entrar no Sistema</h2>
+    <button onclick="abrirLoginAluno()"> Entrar como Aluno</button>
+    <button onclick="abrirLoginPsi()"> Entrar como Psicólogo</button>
+  </section>
+
+  <!-- LOGIN ALUNO -->
+  <section class="container hidden" id="loginAluno">
+    <h2>Login - Aluno</h2>
+    <input type="email" id="emailAlunoLogin" placeholder="E-mail">
+    <div class="input-group">
+      <input type="password" id="senhaAlunoLogin" placeholder="Senha">
+      <button type="button" class="btn-eye" onclick="toggleSenha('senhaAlunoLogin')">👁️</button>
+    </div>
+    <button onclick="fazerLoginAluno()">Entrar</button>
+    <button onclick="abrirTela('inicio')" class="btn-cancelar">Voltar</button>
+  </section>
+
+  <!-- LOGIN PSICÓLOGO -->
+  <section class="container hidden" id="loginPsi">
+    <h2>Login - Psicólogo</h2>
+    <input type="email" id="emailPsiLogin" placeholder="E-mail">
+    <div class="input-group">
+      <input type="password" id="senhaPsiLogin" placeholder="Senha">
+      <button type="button" class="btn-eye" onclick="toggleSenha('senhaPsiLogin')">👁️</button>
+    </div>
+    <button onclick="entrarPsi()">Entrar</button>
+    <button onclick="abrirTela('inicio')" class="btn-cancelar">Voltar</button>
+  </section>
+
+  <!-- CADASTRO ALUNO -->
+  <section class="container hidden" id="cadAluno">
+    <h2>Cadastro - Aluno</h2>
+    <input type="text" id="nomeAluno" placeholder="Nome completo">
+    <input type="email" id="emailAluno" placeholder="E-mail">
+    <div class="input-group">
+      <input type="password" id="senhaAluno" placeholder="Senha">
+      <button type="button" class="btn-eye" onclick="toggleSenha('senhaAluno')">👁️</button>
+    </div>
+    <select id="turmaAluno">
+      <option value="">Selecione sua turma</option>
+    </select>
+    <button onclick="cadastrarAluno()">Cadastrar</button>
+    <button onclick="abrirTela('inicio')" class="btn-cancelar">Voltar</button>
+  </section>
+
+  <!-- CADASTRO PSICÓLOGO -->
+  <section class="container hidden" id="cadPsi">
+    <h2>Cadastro - Psicólogo</h2>
+    <input type="text" id="nomePsi" placeholder="Nome completo">
+    <input type="email" id="emailPsi" placeholder="E-mail">
+    <div class="input-group">
+      <input type="password" id="senhaPsi" placeholder="Senha">
+      <button type="button" class="btn-eye" onclick="toggleSenha('senhaPsi')">👁️</button>
+    </div>
+    <button onclick="cadastrarPsi()">Cadastrar</button>
+    <button onclick="abrirTela('inicio')" class="btn-cancelar">Voltar</button>
+  </section>
+
+  <!-- ÁREA DO ALUNO -->
+  <section class="container hidden" id="alunoArea">
+    <div class="header-flex">
+      <h2>Área do Aluno</h2>
+      <button onclick="fazerLogout()" class="btn-danger">Sair</button>
+    </div>
+
+    <div class="tab-buttons">
+      <button onclick="mostrarAgendar()" class="tab-btn active" id="btnAgendarTab"> Agendar</button>
+      <button onclick="mostrarMeusAgendamentos()" class="tab-btn" id="btnMeusTab"> Meus Agendamentos</button>
+    </div>
+
+    <div id="agendarDiv">
+      <h3>Novo Agendamento</h3>
+      <select id="psicologoSelect">
+        <option value="">Selecione o psicólogo</option>
+      </select>
+      <input type="date" id="dataAgendamento">
+      <select id="horarioSelect" disabled>
+        <option value="">Primeiro selecione psicólogo e data</option>
+      </select>
+      <textarea id="motivoAgendamento" placeholder="Motivo (opcional)"></textarea>
+      <button onclick="criarAgendamento()">Agendar</button>
+    </div>
+
+    <div id="meusAgendamentosDiv" style="display: none;">
+      <h3>Meus Agendamentos</h3>
+      <div id="listaAgendamentosAluno"></div>
+    </div>
+
+    <hr>
+    <button onclick="excluirConta()" class="btn-cancelar"> Excluir Minha Conta</button>
+  </section>
+
+  <!-- ÁREA DO PSICÓLOGO -->
+  <section class="container hidden" id="psiArea">
+    <div class="header-flex">
+      <h2> Área do Psicólogo</h2>
+      <button onclick="fazerLogout()" class="btn-danger">Sair</button>
+    </div>
+    <h3>Agendamentos dos Alunos</h3>
+    <div id="listaAgendamentosPsi"></div>
+    <hr>
+    <button onclick="excluirConta()" class="btn-cancelar"> Excluir Minha Conta</button>
+  </section>
+
+</main>
+
+<footer>© 2026 PsicoEdu - Agendamento com Psicólogo Escolar<br>EEEP Padre João Bosco de Lima</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

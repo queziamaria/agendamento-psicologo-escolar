@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #F0F8FF, #A8D8FF);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #1E3A5F;
+}
+
+header, footer {
+  background: #4A90E2;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  flex: 1;
+  padding: 40px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 2px solid #A8D8FF;
+  font-size: 14px;
+}
+
+button {
+  background: #4A90E2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #3a7bc8;
+  transform: scale(1.02);
+}
+
+.btn-cancelar {
+  background: #e74c3c;
+}
+
+.btn-cancelar:hover {
+  background: #c0392b;
+}
+
+.btn-danger {
+  background: #e74c3c;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+}
+
+.hidden {
+  display: none;
+}
+
+.agendamento-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+  border-left: 4px solid #4A90E2;
+}
+
+.status {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.status.agendado {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.cancelado {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.mensagem {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.mensagem.sucesso {
+  background: #d4edda;
+  color: #155724;
+}
+
+.mensagem.erro {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.btn-eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  background: none;
+  color: #4A90E2;
+  margin: 0;
+  padding: 5px;
+}
+
+.btn-eye:hover {
+  background: none;
+  transform: scale(1.1);
+}
+
+img {
+  width: 180px;
+  margin: 20px auto;
+  display: block;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: #e0e0e0;
+  color: #333;
+}
+
+.tab-btn.active {
+  background: #4A90E2;
+  color: white;
+}
+
+#listaAgendamentosAluno, #listaAgendamentosPsi {
+  max-height: 400px;
+  overflow-y: auto;
+  text-align: left;
+}
