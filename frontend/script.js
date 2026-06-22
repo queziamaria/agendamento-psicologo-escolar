@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://psicoedu-backend.vercel.app';
 let usuario = null;
 
 // ========== FUNÇÕES DE TELA ==========
